@@ -1,0 +1,39 @@
+<%- include("../partials/heards.ejs") %>
+
+            <h1><%= title %></h1>
+            <hr>
+
+        <form method="POST" action="/aluno/cadastro">
+            <input type="hidden" name="id" value="<%= aluno.id %>">
+            <div class="mb-3">
+                <label class="form-label">Nome</label>
+                <input required value="<%=aluno.nome %>" class="form-control" type="text"  name="nome">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Endereço</label>
+                <input required value="<%=aluno.endereco %>" class="form-control" type="text" name = "endereco">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input required value="<%=aluno.email %>" class="form-control" type="email" name = "email">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Telefone</label>
+                <input required value="<%=aluno.telefone %>" class="form-control" type="text" name = "telefone">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Matricula</label>
+                <input required value="<%=aluno.matricula %>" class="form-control" type="text" name = "matricula">
+            </div>
+        
+        
+            <button type="submit" required class="btn btn-dark">Salvar</button>
+        </form>
+
+            <br><br><a href="/">Voltar</a>
+       
+        <%- include("../partials/footer.ejs") %>

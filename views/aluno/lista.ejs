@@ -1,0 +1,50 @@
+
+    <%- include("../partials/heards.ejs") %>
+    
+    <br> <h1 class="p-3 mb-2 bg-dark text-white">Alunos</h1>
+    <hr>
+    <a class="btn btn-success"  href="/aluno/cadastro/">Cadastrar</a>
+    <br> 
+    <!--
+    Não to conseguindo fazer funciona. 
+    Foi mal equipe!!!
+  -->
+      
+        <% if (alunos) { %>
+      
+
+        <% alunos.forEach(aluno =>{ %>
+            <div class="card text-white bg-dark mb-3" >
+                <div class="card-body">
+                  <h5 class="card-title"><%= aluno.nome %> </h5>
+                  <p class="card-text">
+                    <b>Endereço: </b>  
+                    <%= aluno.endereco %></p>
+                  <p class="card-text">
+                    <b>Email: </b>  
+                    <%= aluno.email %></p>
+                  <p class="card-text">
+                    <b>Telefone: </b>  
+                    <%= aluno.telefone %></p>
+                    <b>Matricula: </b>
+                  <p class="card-text">
+                      <%= aluno.matricula %></p>
+
+
+                  <a class="btn btn-warning"  href="/aluno/cadastro/<%= aluno.id %>">Atualizar</a>
+                  <a class="btn btn-danger" onclick="return confirm('Deseja realmente remover:');" href="/aluno/remover/<%= aluno.id %>">Remover</a>
+
+                  
+                </div>
+              </div>
+        
+    
+        <% }) %>
+    
+
+        <% } else {%>
+            Não há dados para exibir.
+        <% } %>
+
+        <br><br><a href="/">Voltar</a>
+        <%- include("../partials/footer.ejs") %> 

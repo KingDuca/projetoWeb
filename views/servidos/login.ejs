@@ -1,0 +1,32 @@
+<%- include("../partials/heardsOff.ejs") %>
+
+        <h1><%= title %></h1>
+        <hr>
+
+    <form method="POST" action="/servidos/login">
+         
+
+        <div class="mb-3">
+            <label class="form-label">Login</label>
+            <input required  class="form-control" type="text" name = "login">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Senha</label>
+            <input required  class="form-control" type="password" name = "senha">
+        </div>
+
+            
+        <hr>
+        <button type="submit" required class="btn btn-dark">Entrar</button> <br>
+        <br>
+        <a class="btn btn-success"  href="/servidos/cadastro/">Cadastrar</a>
+        <br> 
+        <br><label style="color: red;"><%= msg %></label>
+
+    </form>
+       
+
+            
+       
+        <%- include("../partials/footer.ejs") %>

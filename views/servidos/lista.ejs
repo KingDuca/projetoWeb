@@ -1,0 +1,47 @@
+
+    <%- include("../partials/heardsOff.ejs") %>
+    
+    <br> <h1 class="p-3 mb-2 bg-dark text-white">Servidores</h1>
+    <hr>
+    <a class="btn btn-success"  href="/servido/cadastro/">Cadastrar</a>
+    <br> 
+   
+      
+        <% if (servidos) { %>
+      
+
+        <% servidos.forEach(servido =>{ %>
+            <div class="card text-white bg-dark mb-3" >
+                <div class="card-body">
+                  <h5 class="card-title"><%= servido.nome %> </h5>
+                  <p class="card-text">
+                    <b>Endereço: </b>  
+                    <%= servido.endereco %></p>
+                  <p class="card-text">
+                    <b>Email: </b>  
+                    <%= servido.email %></p>
+                  <p class="card-text">
+                    <b>Telefone: </b>  
+                    <%= servido.telefone %></p>
+                    <b>Profissão: </b>
+                  <p class="card-text">
+                    <%= servido.profissao %></p>
+
+
+                  <a class="btn btn-warning"  href="/servido/cadastro/<%= servido.id %>">Atualizar</a>
+                  <a class="btn btn-danger" onclick="return confirm('Deseja realmente remover:');" href="/servido/remover/<%= servido.id %>">Remover</a>
+
+                  
+                </div>
+              </div>
+        
+    
+        <% }) %>
+    
+
+        <% } else {%>
+            Não há dados para exibir.
+        <% } %>
+
+        <br><br><a href="/">Voltar</a>
+        <%- include("../partials/footer.ejs") %> 
